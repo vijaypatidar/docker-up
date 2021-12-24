@@ -2,14 +2,14 @@ version: '2'
 
 services:
   jenkins:
-    image: docker.io/bitnami/jenkins:2
+    image: jenkins/jenkins:jdk11
     ports:
       - '8280:8080'
     environment:
       - JENKINS_PASSWORD=root@admin
-      - JENKINS_USER=root
+      - JENKINS_USERNAME=root
     volumes:
-      - 'jenkins_data:/bitnami/jenkins'
+      - 'jenkins_data:/jenkins'
 
 volumes:
   jenkins_data:
